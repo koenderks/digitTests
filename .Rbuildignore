@@ -1,0 +1,10 @@
+^.yml$
+^cran-comments.md$
+^codecov.yml$
+^.github$
+^doc$
+^man/manual$
+^Meta$
+^docs$
+^pkgdown$
+dtRelease.R
