@@ -4,7 +4,7 @@
 \alias{rv.test}
 \title{Test of Repeated Values}
 \usage{
-rv.test(x, check = 'last', method = "af", samples = 1000)
+rv.test(x, check = 'last', method = 'af', samples = 1000)
 }
 \arguments{
 \item{x}{a numeric vector of values from which the digits should be analyzed.}

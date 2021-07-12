@@ -9,7 +9,9 @@
 
 <img src='https://github.com/koenderks/digitTests/raw/master/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
 
-`digitTests` is an R package providing statistical tests for detecting irregular digit patterns.
+`digitTests` is an R package providing statistical tests for detecting irregular digit patterns. Such irregular digit patterns can be an indication of potential data manipulation or fraud. Therefore, the type of tests that the package provides can be useful in (but not limited to) the field of auditing to assess whether data have potentially been tampered with. However, please note that real data will never be perfect, and therefore caution should be used when relying on the statistical decision metrics that the package provides.
+
+The package is also implemented with a graphical user interface in the Audit module of [JASP](https://jasp-stats.org), a free and open-source statistical software program.
 
 ## Overview
 
@@ -42,33 +44,123 @@ library(digitTests)
 
 ## 2. Benchmarks
 
-To validate the statistical results, `digitTests`'s automated [unit tests](https://github.com/koenderks/digitTests/tree/master/tests/testthat) regularly verify the main output from the package against the following benchmark(s):
+To validate the statistical results, `digitTests`'s automated [unit tests](https://github.com/koenderks/digitTests/tree/master/tests/testthat) regularly verify the main output from the package against the following benchmarks:
 
 - [benford.analysis](https://cran.r-project.org/package=benford.analysis) (R package version 0.1.5)
+- [BenfordTests](https://cran.r-project.org/package=BenfordTests) (R package version 1.2.0)
 
 ## 3. Intended usage
 
-### `distr.test()` & `distr.btest()`
+### Function: `extract_digits()`
 
-The functions `distr.test()` and `distr.btest()` 
+The workhorse of the package is the `extract_digits()` function. This function takes a vector of numbers and returns the requested digits (with or without including `0`'s).
 
-**Example: Assessing Benford's law**
-
-Benford’s law is a principle that describes a pattern in many naturally-occurring numbers. The `distr.test()` function can be used to extract the first (using `check = 'first'`), last (using `check = 'last'`), or first and second (using `check = 'firsttwo'`) digits from the values in `x`.
+*Full function with default arguments:*
 
 ```r
-data(sinoForest)
-x <- distr.test(sinoForest$value, check = 'first', reference = 'benford')
-
-x       # Gives output of chi-squared test
-plot(x) # Produces a plot of observed vs. expected distribution
+extract_digits(x, check = 'first', include.zero = FALSE)
 ```
 
-### `rv.test()`
+*Supported options for the `check` argument:*
 
-The function `rv.test()` analyzes the frequency with which values get repeated within a set of numbers. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit. For the technical details of this procedure, see 
+| `check` | Returns |
+| :----------- | :----------- |
+| `fist` | First digit |
+| `firsttwo` | First and second digit |
+| `before` | All digits before the decimal separator (`.`) |
+| `after` | All digits after the decimal separator (`.`) |
+| `lasttwo` | Last two digits |
+| `last` | Last digit |
 
-## References
+*Example:*
 
-- Benford, F. (1938). The law of anomalous numbers. In Proceedings of the American Philosophical Society, 551-572.
-- Simohnsohn, U. (2019, May 25). Number-Bunching: A New Tool for Forensic Data Analysis. Retrieved from http://datacolada.org/77.
+```r
+x <- c(0.00, 0.20, 1.23, 40.00, 54.04)
+extract_digits(x, check = 'first', include.zero = FALSE)
+# [1] NA  2  1  4  5
+```
+
+### Functions: `distr.test()` & `distr.btest()`
+
+The functions `distr.test()` and `distr.btest()` take a vector of numeric values, extract the requested digits, and compares the frequencies of these digits to a reference distribution. The function `distr.test()` performs a frequentist hypothesis test of the null hypothesis that the digits are distributed according to the reference distribution and produces a *p* value. The function `distr.btest()` performs a Bayesian hypothesis test of the null hypothesis that the digits are distributed according to the reference distribution against the alternative hypothesis (using the prior parameters specified in `alpha`) that the digits are not distributed according to the reference distribution and produces a Bayes factor (Kass & Raftery, 1995). The possible options for the `check` argument are taken over from `extract_digits()`.
+
+*Full function with default arguments:*
+
+```r
+distr.test(x, check = 'first', reference = 'benford')
+distr.btest(x, check = 'first', reference = 'benford', alpha = NULL, BF10 = TRUE, log = FALSE)
+```
+
+*Supported options for the `reference` argument:*
+
+| `check` | Returns |
+| :----------- | :----------- |
+| `benford` | Benford's law |
+| `firsttwo` | Uniform distribution |
+| Vector of probabilities | Custom distribution |
+
+*Example:*
+
+Benford’s law (Benford, 1938) is a principle that describes a pattern in many naturally-occurring numbers. According to Benford's law, each possible leading digit *d* in a naturally occuring, or non-manipulated, set of numbers occurs with a probability:
+
+<img src="https://latex.codecogs.com/svg.image?p(d_i)&space;=&space;\text{log}_{10}(1&space;+&space;\frac{1}{d_i})" title="p(d_i) = \text{log}_{10}(\frac{1}{d_i})" />
+
+The distribution of leading digits in a data set of financial transaction values (e.g., the `sinoForest` data) can be extracted and tested against the expected frequencies under Benford's law using the code below.
+
+```r
+# Frequentist hypothesis test
+distr.test(sinoForest$value, check = 'first', reference = 'benford')
+
+#
+# 	Digit distribution test
+#
+# data:  sinoForest$value
+# n = 772, X-squared = 7.6517, df = 8, p-value = 0.4682
+# alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.
+
+# Bayesian hypothesis test using default prior
+distr.btest(sinoForest$value, check = 'first', reference = 'benford', BF10 = FALSE)
+
+#
+# 	Digit distribution test
+#
+# data:  sinoForest$value
+# n = 772, BF01 = 6899678
+# alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.
+```
+
+### Function: `rv.test()`
+
+The function `rv.test()` analyzes the frequency with which values get repeated within a set of numbers. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit. For the technical details of this procedure, see Simohnsohn (2019). The possible options for the `check` argument are taken over from `extract_digits()`.
+
+*Full function with default arguments:*
+
+```r
+rv.test(x, check = 'last', method = 'af', samples = 1000)
+```
+
+*Supported options for the `method` argument:*
+
+| `check` | Returns |
+| :----------- | :----------- |
+| `af` | Average frequency |
+| `entropy` | Entropy |
+
+*Example:*
+
+```r
+rv.test(sanitizer$value, check = 'lasttwo')
+
+#
+# 	Repeated values test
+#
+# data:  sanitizer$value
+# n = 1600, AF = 1.5225, p-value = 0.001
+# alternative hypothesis: data contain an excessive amount of repeated values.
+```
+
+## 4. References
+
+- Benford, F. (1938). The law of anomalous numbers. In *Proceedings of the American Philosophical Society*, 551-572.
+- Kass, R. E., & Raftery, A. E. (1995). Bayes factors. *Journal of the American Statistical Association*, *90*(430), 773-795.
+- Simohnsohn, U. (2019, May 25). *Number-Bunching: A New Tool for Forensic Data Analysis*. Retrieved from [http://datacolada.org/77](http://datacolada.org/77).

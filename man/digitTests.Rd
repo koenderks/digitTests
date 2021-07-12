@@ -38,8 +38,15 @@ library(digitTests)
 ### Example 1: Benford's Law ####
 ############################################
 
-x <- rnorm(100)
-distr.test(x, check = 'first', reference = 'benford')
+data('sinoForest')
+distr.test(sinoForest$value, check = 'first', reference = 'benford')
+
+###################################
+### Example 2: Repeated Values ####
+###################################
+
+data('sanitizer')
+rv.test(sanitizer$value, check = 'lasttwo', method = 'af')
 
 }
 \keyword{digitTests} 

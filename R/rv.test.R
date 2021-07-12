@@ -2,7 +2,7 @@
 #'
 #' @description This function analyzes the frequency with which values get repeated within a set of numbers. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.
 #'
-#' @usage rv.test(x, check = 'last', method = "af", samples = 1000)
+#' @usage rv.test(x, check = 'last', method = 'af', samples = 1000)
 #' 
 #' @param x        a numeric vector of values from which the digits should be analyzed.
 #' @param check    which digits to shuffle during the procedure. Can be \code{last} or \code{lasttwo}.
@@ -46,7 +46,7 @@
 #' 
 #' @export
 
-rv.test <- function(x, check = 'last', method = "af", samples = 1000) {
+rv.test <- function(x, check = 'last', method =  'af', samples = 1000) {
   
   if (!(check %in% c("last", "lasttwo", "all")))
     stop("Specify a valid input for the check argument.")

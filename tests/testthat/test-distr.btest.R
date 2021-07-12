@@ -1,5 +1,12 @@
 context("Tests for function distr.btest")
 
+test_that(desc = "Print call", {
+  data("sinoForest")
+  res <- digitTests::distr.test(x = sinoForest$value, check = 'first', reference = 'benford')
+  invisible({capture.output({ print(res) }) })
+  expect_equal(length(res$digits), 9)
+})
+
 test_that(desc = "Validate Derks et al. (2020)", {
   data("sinoForest")
   res <- digitTests::distr.btest(x = sinoForest$value, check = 'first', reference = 'benford', BF10 = FALSE)

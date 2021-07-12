@@ -1,5 +1,13 @@
 context("Tests for function distr.test")
 
+test_that(desc = "Print and plot call", {
+  data("sinoForest")
+  res <- digitTests::distr.test(x = sinoForest$value, check = 'first', reference = 'benford')
+  invisible({capture.output({ print(res) }) })
+  invisible({capture.output({ plot(res) }) })
+  expect_equal(length(res$digits), 9)
+})
+
 test_that(desc = "Validate Derks et al. (2020)", {
   data("sinoForest")
   res <- digitTests::distr.test(x = sinoForest$value, check = 'first', reference = 'benford')
@@ -34,4 +42,11 @@ test_that(desc = "Validate benford.analysis package first and second digits", {
   expect_equal(as.numeric(ba[["stats"]]$chisq$statistic), as.numeric(dt$statistic))
   expect_equal(as.numeric(ba[["stats"]]$chisq$parameter), as.numeric(dt$parameter))
   expect_equal(as.numeric(ba[["stats"]]$chisq$p.value), as.numeric(dt$p.value))
+})
+
+test_that(desc = "Validate BenfordTests package first digits", {
+  bt <- BenfordTests::chisq.benftest(x = sinoForest$value, digits = 1)
+  dt <- digitTests::distr.test(x = sinoForest$value, check = "first")
+  expect_equal(as.numeric(bt$statistic), as.numeric(dt$statistic))
+  expect_equal(as.numeric(bt$p.value), as.numeric(dt$p.value))
 })

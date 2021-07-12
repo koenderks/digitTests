@@ -1,17 +1,17 @@
 Package: digitTests
 Title: Tests for Detecting Irregular Digit Patterns
 Version: 0.1.0
-Date: 2021-07-09
+Date: 2021-07-13
 Authors@R: 
     person(given = "Koen",
            family = "Derks",
            role = c("aut", "cre"),
            email = "k.derks@nyenrode.nl",
 		   comment = c(ORCID = '0000-0002-5533-9349'))
-Description: Tests for detecting irregular patterns in sets of numbers, including (Bayesian) tests of Benford's law.
+Description: Provides statistical tests and support functions for detecting (ir)regular digit patterns in numerical data. The package includes tools for extracting digits at various locations in a number, tests for repeated values, and (Bayesian) tests of Benford's law or any other digit distribution.
 BugReports: https://github.com/koenderks/digitTests/issues
 Imports: graphics, stats
-Suggests: benford.analysis, knitr, testthat
+Suggests: benford.analysis, BenfordTests, knitr, testthat
 Language: en-US
 License: GPL-3
 Encoding: UTF-8
