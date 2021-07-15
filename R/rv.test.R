@@ -2,7 +2,7 @@
 #'
 #' @description This function analyzes the frequency with which values get repeated within a set of numbers. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.
 #'
-#' @usage rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 1000)
+#' @usage rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 2000)
 #' 
 #' @param x             a numeric vector of values from which the digits should be analyzed.
 #' @param alternative   a character string specifying the alternative hypothesis, must be one of \code{"two.sided"} (default), \code{"greater"} or \code{"less"}.
@@ -47,7 +47,7 @@
 #' 
 #' @export
 
-rv.test <- function(x, alternative = 'two.sided', check = 'last', method = 'af', B = 1000) {
+rv.test <- function(x, alternative = 'two.sided', check = 'last', method = 'af', B = 2000) {
   
   if (!(check %in% c("last", "lasttwo", "all")))
     stop("Specify a valid input for the check argument.")

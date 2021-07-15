@@ -137,7 +137,7 @@ The function `rv.test()` analyzes the frequency with which values get repeated w
 *Full function with default arguments:*
 
 ```r
-rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 1000)
+rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 2000)
 ```
 
 *Supported options for the `method` argument:*
@@ -149,15 +149,17 @@ rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 1000)
 
 *Example:*
 
+In this example we analyze a data set from a (retracted) paper that describes three experiments run in Chinese factories, where workers were nudged to use more hand-sanitizer. These data were shown to exhibited two classic markers of data tampering: impossibly similar means and the uneven distribution of last digits (Yu, Nelson, & Simohnson, 2018). We can use the `rv.test()` function to test if these data also contain a greater amount of repeated values than expected if the data were not tampered with.
+
 ```r
-rv.test(sanitizer$value, check = 'lasttwo')
+rv.test(sanitizer$value, alternative = 'greater', check = 'lasttwo', B = 5000)
 
 #
 # 	Repeated values test
 #
 # data:  sanitizer$value
-# n = 1600, AF = 1.5225, p-value = 0.001
-# alternative hypothesis: data contain an excessive amount of repeated values.
+# n = 1600, AF = 1.5225, p-value = 0.0024
+# alternative hypothesis: frequencies of repeated values are greater than for random data.
 ```
 
 ## 4. References
@@ -165,3 +167,4 @@ rv.test(sanitizer$value, check = 'lasttwo')
 - Benford, F. (1938). The law of anomalous numbers. In *Proceedings of the American Philosophical Society*, 551-572.
 - Kass, R. E., & Raftery, A. E. (1995). Bayes factors. *Journal of the American Statistical Association*, *90*(430), 773-795.
 - Simohnsohn, U. (2019, May 25). *Number-Bunching: A New Tool for Forensic Data Analysis*. Retrieved from [http://datacolada.org/77](http://datacolada.org/77).
+- Yo, F., Nelson, L., & Simonsohn, U. (2018, December 5). *In Press at Psychological Science: A New 'Nudge' Supported by Implausible Data*. Retrieved from [http://datacolada.org/74](http://datacolada.org/74).
