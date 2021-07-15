@@ -50,3 +50,10 @@ test_that(desc = "Validate BenfordTests package first digits", {
   expect_equal(as.numeric(bt$statistic), as.numeric(dt$statistic))
   expect_equal(as.numeric(bt$p.value), as.numeric(dt$p.value))
 })
+
+test_that(desc = "Validate BeyondBenford package first digits", {
+  bb <- BeyondBenford::chi2(sinoForest$value, mod = "ben", dig = 1, pval = 1)
+  dt <- digitTests::distr.test(x = sinoForest$value, check = "first")
+  expect_equal(as.numeric(bb$chi2[2]), as.numeric(dt$statistic))
+  expect_equal(as.numeric(bb$pval[2]), as.numeric(dt$p.value))
+})

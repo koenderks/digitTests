@@ -48,6 +48,7 @@ To validate the statistical results, `digitTests`'s automated [unit tests](https
 
 - [benford.analysis](https://cran.r-project.org/package=benford.analysis) (R package version 0.1.5)
 - [BenfordTests](https://cran.r-project.org/package=BenfordTests) (R package version 1.2.0)
+- [BeyondBenford](https://cran.r-project.org/package=BeyondBenford) (R package version 1.4)
 
 ## 3. Intended usage
 

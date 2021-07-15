@@ -12,7 +12,7 @@ Description: Provides statistical tests and support functions for detecting (ir)
 BugReports: https://github.com/koenderks/digitTests/issues
 URL: https://koenderks.github.io/digitTests/, https://github.com/koenderks/digitTests
 Imports: graphics, stats
-Suggests: benford.analysis, BenfordTests, knitr, testthat
+Suggests: benford.analysis, BenfordTests, BeyondBenford, knitr, testthat
 Language: en-US
 License: GPL-3
 Encoding: UTF-8
