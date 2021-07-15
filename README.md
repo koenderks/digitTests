@@ -137,7 +137,7 @@ The function `rv.test()` analyzes the frequency with which values get repeated w
 *Full function with default arguments:*
 
 ```r
-rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 2000)
+rv.test(x, check = 'last', method = 'af', B = 2000)
 ```
 
 *Supported options for the `method` argument:*
@@ -152,7 +152,7 @@ rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 2000)
 In this example we analyze a data set from a (retracted) paper that describes three experiments run in Chinese factories, where workers were nudged to use more hand-sanitizer. These data were shown to exhibited two classic markers of data tampering: impossibly similar means and the uneven distribution of last digits (Yu, Nelson, & Simohnson, 2018). We can use the `rv.test()` function to test if these data also contain a greater amount of repeated values than expected if the data were not tampered with.
 
 ```r
-rv.test(sanitizer$value, alternative = 'greater', check = 'lasttwo', B = 5000)
+rv.test(sanitizer$value, check = 'lasttwo', B = 5000)
 
 #
 # 	Repeated values test
