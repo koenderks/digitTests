@@ -231,7 +231,7 @@
 <p>The function <code><a href="reference/rv.test.html">rv.test()</a></code> analyzes the frequency with which values get repeated within a set of numbers. Unlike Benford’s law, and its generalizations, this approach examines the entire number at once, not only the first or last digit. For the technical details of this procedure, see Simohnsohn (2019). The possible options for the <code>check</code> argument are taken over from <code><a href="reference/extract_digits.html">extract_digits()</a></code>.</p>
 <p><em>Full function with default arguments:</em></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/rv.test.html">rv.test</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'last'</span>, method <span class="op">=</span> <span class="st">'af'</span>, samples <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="reference/rv.test.html">rv.test</a></span><span class="op">(</span><span class="va">x</span>, alternative <span class="op">=</span> <span class="st">'two.sided'</span>, check <span class="op">=</span> <span class="st">'last'</span>, method <span class="op">=</span> <span class="st">'af'</span>, B <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></code></pre></div>
 <p><em>Supported options for the <code>method</code> argument:</em></p>
 <table class="table">
 <thead><tr class="header">
