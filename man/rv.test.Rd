@@ -4,16 +4,18 @@
 \alias{rv.test}
 \title{Test of Repeated Values}
 \usage{
-rv.test(x, check = 'last', method = 'af', samples = 1000)
+rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 1000)
 }
 \arguments{
 \item{x}{a numeric vector of values from which the digits should be analyzed.}
+
+\item{alternative}{a character string specifying the alternative hypothesis, must be one of \code{"two.sided"} (default), \code{"greater"} or \code{"less"}.}
 
 \item{check}{which digits to shuffle during the procedure. Can be \code{last} or \code{lasttwo}.}
 
 \item{method}{which property of the data is calculated. Defaults to \code{af} for average frequency, but can also be \code{entropy} for entropy.}
 
-\item{samples}{how many samples to use in the bootstraping procedure.}
+\item{B}{how many samples to use in the bootstraping procedure.}
 }
 \value{
 An object of class \code{dt.rv} containing:
@@ -35,7 +37,7 @@ An object of class \code{dt.rv} containing:
 This function analyzes the frequency with which values get repeated within a set of numbers. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.
 }
 \details{
-To determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested. The statistic can either be the average frequency (\eqn{AF = sum(f_i^2)/sum(f_i))} of the data or the entropy (\eqn{E = - sum(p_i * log(p_i))}, with \eqn{p_i=f_i/n}) of the data. Average frequency and entropy are highly correlated, but the average frequency is often more interpretable. For example, an average frequency of 2.5 means that, on average, your observations contain a value that appears 2.5 times in the data set.To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.
+To determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected (random) amount of repeated values is tested. If \code{alternative = "greater"} the alternative is that \code{x} has more repeated values than expected, and if \code{alternative = "less"} the alternative is that \code{x} has less repeated values than expected.The statistic can either be the average frequency (\eqn{AF = sum(f_i^2)/sum(f_i))} of the data or the entropy (\eqn{E = - sum(p_i * log(p_i))}, with \eqn{p_i=f_i/n}) of the data. Average frequency and entropy are highly correlated, but the average frequency is often more interpretable. For example, an average frequency of 2.5 means that, on average, your observations contain a value that appears 2.5 times in the data set.To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.
 }
 \examples{
  

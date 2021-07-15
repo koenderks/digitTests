@@ -63,7 +63,8 @@ print.dt.rv <- function(x, digits = getOption("digits"), ...) {
     out <- c(out, paste("p-value", if (startsWith(fp, "<")) fp else paste("=", fp)))
   }
   cat(strwrap(paste(out, collapse = ", ")), sep = "\n")
-  cat(paste0("alternative hypothesis: data contain an excessive amount of repeated values."))
+  altLabel <- switch(x$alternative, "two.sided" = "different", "less" = "less", "greater" = "greater")
+  cat(paste0("alternative hypothesis: frequencies of repeated values are ", altLabel, " than for random data."))
   cat("\n")
   invisible(x)
 }

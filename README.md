@@ -136,7 +136,7 @@ The function `rv.test()` analyzes the frequency with which values get repeated w
 *Full function with default arguments:*
 
 ```r
-rv.test(x, check = 'last', method = 'af', samples = 1000)
+rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 1000)
 ```
 
 *Supported options for the `method` argument:*

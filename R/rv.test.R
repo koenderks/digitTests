@@ -2,14 +2,15 @@
 #'
 #' @description This function analyzes the frequency with which values get repeated within a set of numbers. Unlike Benford's law, and its generalizations, this approach examines the entire number at once, not only the first or last digit.
 #'
-#' @usage rv.test(x, check = 'last', method = 'af', samples = 1000)
+#' @usage rv.test(x, alternative = 'two.sided', check = 'last', method = 'af', B = 1000)
 #' 
-#' @param x        a numeric vector of values from which the digits should be analyzed.
-#' @param check    which digits to shuffle during the procedure. Can be \code{last} or \code{lasttwo}.
-#' @param method   which property of the data is calculated. Defaults to \code{af} for average frequency, but can also be \code{entropy} for entropy.
-#' @param samples  how many samples to use in the bootstraping procedure.
+#' @param x             a numeric vector of values from which the digits should be analyzed.
+#' @param alternative   a character string specifying the alternative hypothesis, must be one of \code{"two.sided"} (default), \code{"greater"} or \code{"less"}.
+#' @param check         which digits to shuffle during the procedure. Can be \code{last} or \code{lasttwo}.
+#' @param method        which property of the data is calculated. Defaults to \code{af} for average frequency, but can also be \code{entropy} for entropy.
+#' @param B             how many samples to use in the bootstraping procedure.
 #'
-#' @details To determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected amount of repeated values is tested. The statistic can either be the average frequency (\eqn{AF = sum(f_i^2)/sum(f_i))} of the data or the entropy (\eqn{E = - sum(p_i * log(p_i))}, with \eqn{p_i=f_i/n}) of the data. Average frequency and entropy are highly correlated, but the average frequency is often more interpretable. For example, an average frequency of 2.5 means that, on average, your observations contain a value that appears 2.5 times in the data set.To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.
+#' @details To determine whether the data show an excessive amount of bunching, the null hypothesis that the data do not contain an unexpected (random) amount of repeated values is tested. If \code{alternative = "greater"} the alternative is that \code{x} has more repeated values than expected, and if \code{alternative = "less"} the alternative is that \code{x} has less repeated values than expected.The statistic can either be the average frequency (\eqn{AF = sum(f_i^2)/sum(f_i))} of the data or the entropy (\eqn{E = - sum(p_i * log(p_i))}, with \eqn{p_i=f_i/n}) of the data. Average frequency and entropy are highly correlated, but the average frequency is often more interpretable. For example, an average frequency of 2.5 means that, on average, your observations contain a value that appears 2.5 times in the data set.To quantify what is expected, this test requires the assumption that the integer portions of the numbers are not associated with their decimal portions.
 #'
 #' @return An object of class \code{dt.rv} containing:
 #'
@@ -46,7 +47,7 @@
 #' 
 #' @export
 
-rv.test <- function(x, check = 'last', method =  'af', samples = 1000) {
+rv.test <- function(x, alternative = 'two.sided', check = 'last', method = 'af', B = 1000) {
   
   if (!(check %in% c("last", "lasttwo", "all")))
     stop("Specify a valid input for the check argument.")
@@ -65,9 +66,9 @@ rv.test <- function(x, check = 'last', method =  'af', samples = 1000) {
   decimals <- extract_digits(x, check = check, include.zero = TRUE)
   frequencies <- table(x)
   
-  storage <- numeric(samples)
+  storage <- numeric(B)
   if (method == 'af') {
-    statistic <- .avg_freq(x)
+    statistic <- .af(x)
   } else if (method == 'entropy') {
     statistic <- .entropy(x)
   } else {
@@ -76,32 +77,48 @@ rv.test <- function(x, check = 'last', method =  'af', samples = 1000) {
   
   fraction <- switch(check, "last" = 10, "lasttwo" = 100, "after" = 1)
   
-  for (i in 1:samples) {
+  for (i in 1:B) {
     decim_samples <- sample(decimals/fraction)
     sim <- ifelse(integers < 0, yes = (x + (decimals/fraction)) - decim_samples, no = (x - (decimals/fraction)) + decim_samples)
-    storage[i] <- switch(method, "af" = .avg_freq(sim), "entropy" = .entropy(sim))
+    storage[i] <- switch(method, "af" = .af(sim), "entropy" = .entropy(sim))
+  }
+
+  if (all(storage == 1)) {
+    pval <- 1
+  } else {
+    if (method == "af") {
+      pval <- switch(alternative, 
+                     'two.sided' = ifelse(statistic > stats::median(storage), yes = mean(storage >= statistic), no = mean(storage <= statistic)) * 2,
+                     'less' = mean(storage <= statistic),
+                     'greater' = mean(storage >= statistic))
+    } else {
+      pval <- switch(alternative, 
+                     'two.sided' = ifelse(statistic > stats::median(storage), yes = mean(storage >= statistic), no = mean(storage <= statistic)) * 2,
+                     'less' = mean(storage >= statistic),
+                     'greater' = mean(storage <= statistic))
+    }
   }
   
-  pval <- ifelse(statistic > stats::median(storage), yes = mean(storage >= statistic), no = mean(storage <= statistic))
   cortest <- stats::cor.test(integers, decimals)
   
   names(n) <- "n"
   names(statistic) <- switch(method, "af" = "AF", "entropy" = "S")
   
-  if (samples < 500)
+  if (B < 500)
     warning("the p-value may be unreliable. It is advised to increase the number of samples.")
   
-  result <- list(x = x,
+  result <- list(statistic = statistic,
+                 p.value = pval,
+                 x = x,
                  frequencies = frequencies,
                  samples = storage,
                  integers = table(integers),
                  decimals = table(decimals),
                  n = n,
-                 statistic = statistic,
-                 p.value = pval,
                  cor.test = cortest,
-                 method = method,
+                 alternative = alternative,
                  check = check,
+                 method = method,
                  data.name = dname)
   class(result) <- c(class(result), 'dt.rv')
   
@@ -118,8 +135,7 @@ rv.test <- function(x, check = 'last', method =  'af', samples = 1000) {
   return(entropy) 
 }
 
-
-.avg_freq <- function(x) {
+.af <- function(x) {
   tx <- table(x)
   af <- sum(tx^2)/sum(tx)
   return(af)
