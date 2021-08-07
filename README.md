@@ -1,13 +1,13 @@
 [![CRAN](https://img.shields.io/cran/v/digitTests?color=yellow&label=CRAN&logo=r)](https://cran.r-project.org/package=digitTests)
 [![R_build_status](https://github.com/koenderks/digitTests/workflows/Build/badge.svg)](https://github.com/koenderks/digitTests/actions)
-[![Codecov](https://codecov.io/gh/koenderks/digitTests/branch/master/graph/badge.svg?token=ZoxIB8p8PW)](https://codecov.io/gh/koenderks/digitTests)
+[![Codecov](https://codecov.io/gh/koenderks/digitTests/branch/development/graph/badge.svg?token=ZoxIB8p8PW)](https://codecov.io/gh/koenderks/digitTests)
 [![Bugs](https://img.shields.io/github/issues/koenderks/digitTests/bug?label=Bugs&logo=github&logoColor=%23FFF&color=brightgreen)](https://github.com/koenderks/digitTests/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 [![Monthly](https://cranlogs.r-pkg.org/badges/digitTests?color=blue)](https://cranlogs.r-pkg.org)
 [![Total](https://cranlogs.r-pkg.org/badges/grand-total/digitTests?color=blue)](https://cranlogs.r-pkg.org)
 
 # digitTests: Tests for Detecting Irregular Digit Patterns
 
-<img src='https://github.com/koenderks/digitTests/raw/master/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
+<img src='https://github.com/koenderks/digitTests/raw/development/man/figures/logo.png' width='149' height='173' alt='logo' align='right' margin-left='20' margin-right='20'/>
 
 `digitTests` is an R package providing statistical tests for detecting irregular digit patterns. Such irregular digit patterns can be an indication of potential data manipulation or fraud. Therefore, the type of tests that the package provides can be useful in (but not limited to) the field of auditing to assess whether data have potentially been tampered with. However, please note that real data will never be perfect, and therefore caution should be used when relying on the statistical decision metrics that the package provides.
 
@@ -44,7 +44,7 @@ library(digitTests)
 
 ## 2. Benchmarks
 
-To validate the statistical results, `digitTests`'s automated [unit tests](https://github.com/koenderks/digitTests/tree/master/tests/testthat) regularly verify the main output from the package against the following benchmarks:
+To validate the statistical results, `digitTests`'s automated [unit tests](https://github.com/koenderks/digitTests/tree/development/tests/testthat) regularly verify the main output from the package against the following benchmarks:
 
 - [benford.analysis](https://cran.r-project.org/package=benford.analysis) (R package version 0.1.5)
 - [BenfordTests](https://cran.r-project.org/package=BenfordTests) (R package version 1.2.0)
