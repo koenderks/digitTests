@@ -97,7 +97,7 @@ distr.btest(x, check = 'first', reference = 'benford', alpha = NULL, BF10 = TRUE
 | `check` | Returns |
 | :----------- | :----------- |
 | `benford` | Benford's law |
-| `firsttwo` | Uniform distribution |
+| `uniform` | Uniform distribution |
 | Vector of probabilities | Custom distribution |
 
 *Example:*
