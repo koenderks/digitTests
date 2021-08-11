@@ -43,6 +43,7 @@ Benford's law is defined as \eqn{p(d) = log10(1/d)}. The uniform distribution is
 The Bayes Factor \eqn{BF_{10}} quantifies how much more likely the data are to be observed under \eqn{H_{1}}: the digits are not distributed according to the reference distribution than under \eqn{H_{0}}: the digits are distributed according to the reference distribution. Therefore, \eqn{BF_{10}} can be interpreted as the relative support in the observed data for \eqn{H_{1}} versus \eqn{H_{0}}. If \eqn{BF_{10}} is 1, there is no preference for either \eqn{H_{1}} or \eqn{H_{0}}. If \eqn{BF_{10}} is larger than 1, \eqn{H_{1}} is preferred. If \eqn{BF_{10}} is between 0 and 1, \eqn{H_{0}} is preferred. The Bayes factor is calculated using the Savage-Dickey density ratio.
 }
 \examples{
+set.seed(1)
 x <- rnorm(100)
 
 # Bayesian digit analysis against Benford's law

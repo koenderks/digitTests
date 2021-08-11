@@ -38,6 +38,7 @@
 #' @keywords benford distribution Bayes factor
 #'
 #' @examples
+#' set.seed(1)
 #' x <- rnorm(100)
 #'
 #' # Bayesian digit analysis against Benford's law

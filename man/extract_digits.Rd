@@ -20,6 +20,7 @@ A vector of first (and optionally second) or last digits.
 This function extracts the first (and optionally second) or last digits in a vector.
 }
 \examples{
+set.seed(1)
 x <- rnorm(100)
 
 # Extract first digits (without zero)

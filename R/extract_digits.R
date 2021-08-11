@@ -15,6 +15,7 @@
 #' @keywords extract digits
 #'
 #' @examples
+#' set.seed(1)
 #' x <- rnorm(100)
 #'
 #' # Extract first digits (without zero)

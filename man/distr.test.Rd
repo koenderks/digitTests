@@ -34,6 +34,7 @@ This function extracts and performs a test of the distribution of (leading) digi
 Benford's law is defined as \eqn{p(d) = log10(1/d)}. The uniform distribution is defined as \eqn{p(d) = 1/d}.
 }
 \examples{
+set.seed(1)
 x <- rnorm(100)
 
 # Digit analysis against Benford's law

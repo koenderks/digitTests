@@ -108,8 +108,8 @@ world.map <-  ggplot2::ggplot(data=world.points) +
   ggplot2::labs(title = 'Total CRAN downloads since August 2021',
                 subtitle = 'Source: http://cran-logs.rstudio.com') +
   ggplot2::scale_fill_gradient2(low = 'white',
-                                mid = rgb(107, 146, 237, maxColorValue = 255),
-                                high = rgb(48, 68, 115, maxColorValue = 255),
+                                mid = rgb(57, 230, 152, maxColorValue = 255),
+                                high = rgb(45, 189, 124, maxColorValue = 255),
                                 midpoint = 5000,
                                 na.value = 'white',
                                 name = '',

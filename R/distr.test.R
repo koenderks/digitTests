@@ -32,6 +32,7 @@
 #' @keywords benford distribution
 #'
 #' @examples
+#' set.seed(1)
 #' x <- rnorm(100)
 #'
 #' # Digit analysis against Benford's law
