@@ -167,8 +167,8 @@ rv.test(sanitizer$value, check = 'lasttwo', B = 5000)
 
 - Benford, F. (1938). The law of anomalous numbers. In *Proceedings of the American Philosophical Society*, 551-572. - [View online](https://www.jstor.org/stable/984802)
 - Kass, R. E., & Raftery, A. E. (1995). Bayes factors. *Journal of the American Statistical Association*, *90*(430), 773-795. - [View online](https://www.tandfonline.com/doi/abs/10.1080/01621459.1995.10476572)
-- Simohnsohn, U. (2019, May 25). *Number-Bunching: A New Tool for Forensic Data Analysis*. - [View online](http://datacolada.org/77)
-- Yo, F., Nelson, L., & Simonsohn, U. (2018, December 5). *In Press at Psychological Science: A New 'Nudge' Supported by Implausible Data*. - [View online](http://datacolada.org/74)
+- Simohnsohn, U. (2019, May 25). *Number-Bunching: A New Tool for Forensic Data Analysis*. - [View online](https://datacolada.org/77)
+- Yo, F., Nelson, L., & Simonsohn, U. (2018, December 5). *In Press at Psychological Science: A New 'Nudge' Supported by Implausible Data*. - [View online](https://datacolada.org/74)
 
 ## 5. Package statistics
 
