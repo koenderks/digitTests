@@ -6,7 +6,6 @@
 ^man/manual$
 ^man/figures/logo.svg
 ^man/figures/readme$
-^man
 ^Meta$
 ^docs$
 ^pkgdown$
