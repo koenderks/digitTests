@@ -110,7 +110,7 @@
 </h2>
 <p>The functions <code><a href="../reference/distr.test.html">distr.test()</a></code> and <code><a href="../reference/distr.btest.html">distr.btest()</a></code> take a vector of numeric values, extract the requested digits, and compares the frequencies of these digits to a reference distribution. The function <code><a href="../reference/distr.test.html">distr.test()</a></code> performs a frequentist hypothesis test of the null hypothesis that the digits are distributed according to the reference distribution and produces a <em>p</em> value. The function <code><a href="../reference/distr.btest.html">distr.btest()</a></code> performs a Bayesian hypothesis test of the null hypothesis that the digits are distributed according to the reference distribution against the alternative hypothesis (using the prior parameters specified in <code>alpha</code>) that the digits are not distributed according to the reference distribution and produces a Bayes factor (Kass &amp; Raftery, 1995). The possible options for the <code>check</code> argument are taken over from <code><a href="../reference/extract_digits.html">extract_digits()</a></code>.</p>
 <p><em>Example:</em></p>
-<p>Benford’s law (Benford, 1938) is a principle that describes a pattern in many naturally-occurring numbers. According to Benford’s law, each possible leading digit <em>d</em> in a naturally occuring, or non-manipulated, set of numbers occurs with a probability p(d) = log10(1 + 1/d). The distribution of leading digits in a data set of financial transaction values (e.g., the <code>sinoForest</code> data) can be extracted and tested against the expected frequencies under Benford’s law using the code below.</p>
+<p>Benford’s law (Benford, 1938) is a principle that describes a pattern in many naturally-occurring numbers. According to Benford’s law, each possible leading digit <em>d</em> in a naturally occurring, or non-manipulated, set of numbers occurs with a probability p(d) = log10(1 + 1/d). The distribution of leading digits in a data set of financial transaction values (e.g., the <code>sinoForest</code> data) can be extracted and tested against the expected frequencies under Benford’s law using the code below.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Frequentist hypothesis test</span>
 <span class="fu"><a href="../reference/distr.test.html">distr.test</a></span><span class="op">(</span><span class="va">sinoForest</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span></code></pre></div>
@@ -143,7 +143,7 @@
 ##  Repeated values test
 ## 
 ## data:  sanitizer$value
-## n = 1600, AF = 1.5225, p-value = 0.0024
+## n = 1600, AF = 1.5225, p-value = 0.0022
 ## alternative hypothesis: average frequency in data is greater than for random data.</code></pre>
 </div>
   </div>
