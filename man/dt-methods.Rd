@@ -27,5 +27,5 @@
 The \code{print} methods simply print and return nothing.
 }
 \description{
-Methods defined for objects returned from the \code{\link{distr.test}} and \code{\link{distr.btest}} functions.
+Methods defined for objects returned from the \code{\link{distr.test}}, \code{\link{distr.btest}}, and \code{\link{rv.test}} functions.
 }

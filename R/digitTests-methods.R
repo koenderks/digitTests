@@ -1,6 +1,6 @@
 #' Methods for da objects
 #'
-#' Methods defined for objects returned from the \code{\link{distr.test}} and \code{\link{distr.btest}} functions.
+#' Methods defined for objects returned from the \code{\link{distr.test}}, \code{\link{distr.btest}}, and \code{\link{rv.test}} functions.
 #'
 #' @param x       an object of class \code{da} as returned by one of the package functions.
 #' @param digits  the number of digits to round to.
