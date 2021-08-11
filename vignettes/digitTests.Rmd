@@ -37,7 +37,7 @@ The functions `distr.test()` and `distr.btest()` take a vector of numeric values
 
 *Example:*
 
-Benford’s law (Benford, 1938) is a principle that describes a pattern in many naturally-occurring numbers. According to Benford's law, each possible leading digit *d* in a naturally occuring, or non-manipulated, set of numbers occurs with a probability p(d) = log10(1 + 1/d). The distribution of leading digits in a data set of financial transaction values (e.g., the `sinoForest` data) can be extracted and tested against the expected frequencies under Benford's law using the code below.
+Benford’s law (Benford, 1938) is a principle that describes a pattern in many naturally-occurring numbers. According to Benford's law, each possible leading digit *d* in a naturally occurring, or non-manipulated, set of numbers occurs with a probability p(d) = log10(1 + 1/d). The distribution of leading digits in a data set of financial transaction values (e.g., the `sinoForest` data) can be extracted and tested against the expected frequencies under Benford's law using the code below.
 
 ```{r}
 # Frequentist hypothesis test

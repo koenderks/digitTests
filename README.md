@@ -103,7 +103,7 @@ distr.btest(x, check = 'first', reference = 'benford', alpha = NULL, BF10 = TRUE
 
 *Example:*
 
-Benford’s law (Benford, 1938) is a principle that describes a pattern in many naturally-occurring numbers. According to Benford's law, each possible leading digit *d* in a naturally occuring, or non-manipulated, set of numbers occurs with a probability:
+Benford’s law (Benford, 1938) is a principle that describes a pattern in many naturally-occurring numbers. According to Benford's law, each possible leading digit *d* in a naturally occurring, or non-manipulated, set of numbers occurs with a probability:
 
 <img src="https://latex.codecogs.com/svg.image?p(d_i)&space;=&space;\text{log}_{10}(1&space;+&space;\frac{1}{d_i})" title="p(d_i) = \text{log}_{10}(\frac{1}{d_i})" />
 
