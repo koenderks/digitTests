@@ -46,7 +46,7 @@ distr.test(sinoForest$value, check = 'first', reference = 'benford')
 ###################################
 
 data('sanitizer')
-rv.test(sanitizer$value, check = 'lasttwo', method = 'af')
+rv.test(sanitizer$value, check = 'lasttwo', method = 'af', B = 1000)
 
 }
 \keyword{digitTests} 

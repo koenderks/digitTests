@@ -39,7 +39,7 @@
 #' x <- rnorm(50)
 #'
 #' # Repeated values analysis shuffling last digit
-#' rv.test(x, check = 'last', method = 'af', B = 500)
+#' rv.test(x, check = 'last', method = 'af', B = 2000)
 #' 
 #' @export
 

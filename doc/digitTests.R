@@ -13,5 +13,5 @@ distr.test(sinoForest$value, check = 'first', reference = 'benford')
 distr.btest(sinoForest$value, check = 'first', reference = 'benford', BF10 = FALSE)
 
 ## -----------------------------------------------------------------------------
-rv.test(sanitizer$value, check = 'lasttwo', B = 500)
+rv.test(sanitizer$value, check = 'lasttwo', B = 2000)
 
