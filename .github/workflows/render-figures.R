@@ -11,7 +11,7 @@ height <- 6
 #########################################################
 
 # Acquire data using the cranlogs package
-digittestsData           <- cranlogs::cran_downloads(packages = 'digitTests', from = '2020-08-01')[, -3]
+digittestsData           <- cranlogs::cran_downloads(packages = 'digitTests', from = '2021-08-01')[, -3]
 digittestsData[['date']] <- lubridate::floor_date(digittestsData[['date']], 'month')
 plotData                 <- plyr::ddply(digittestsData, 'date', plyr::summarise, count = sum(count))
 
