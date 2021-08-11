@@ -35,14 +35,11 @@
 #' @keywords repeated values
 #'
 #' @examples  
-#'
-#' x <- rnorm(100)
+#' set.seed(1)
+#' x <- rnorm(50)
 #'
 #' # Repeated values analysis shuffling last digit
-#' rv.test(x, check = 'last', method = 'af')
-#'
-#' # Repeated values analysis shuffling last two digits
-#' rv.test(x, check = 'lasttwo', method = 'entropy')
+#' rv.test(x, check = 'last', method = 'af', B = 500)
 #' 
 #' @export
 
