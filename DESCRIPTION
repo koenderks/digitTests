@@ -8,7 +8,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "k.derks@nyenrode.nl",
 		   comment = c(ORCID = '0000-0002-5533-9349'))
-Description: Provides statistical tests and support functions for detecting (ir)regular digit patterns in numerical data. The package includes tools for extracting digits at various locations in a number, tests for repeated values, and (Bayesian) tests of Benford's law or any other digit distribution.
+Description: Provides statistical tests and support functions for detecting irregular digit patterns in numerical data. The package includes tools for extracting digits at various locations in a number, tests for repeated values, and (Bayesian) tests of Benfords law or any other digit distribution.
 BugReports: https://github.com/koenderks/digitTests/issues
 URL: https://koenderks.github.io/digitTests/, https://github.com/koenderks/digitTests
 Imports: graphics, stats
