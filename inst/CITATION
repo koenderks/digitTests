@@ -1,4 +1,4 @@
-citHeader("To cite jfa in publications, please use:")
+citHeader("To cite digitTests in publications, please use:")
 
 bibentry(bibtype = "Manual",
          title = "digitTests: Tests for Detecting Irregular Data Patterns",
