@@ -42,8 +42,8 @@
 <polyline points='43.37,124.32 642.52,124.32 ' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' />
 <polyline points='43.37,79.47 642.52,79.47 ' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' />
 <polyline points='342.94,363.38 342.94,37.76 ' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' />
-<rect x='70.60' y='301.04' width='544.68' height='47.54' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
-<text x='342.94' y='260.13' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='12.27px' lengthAdjust='spacingAndGlyphs'>53</text>
+<rect x='70.60' y='294.76' width='544.68' height='53.82' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
+<text x='342.94' y='253.85' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='12.27px' lengthAdjust='spacingAndGlyphs'>60</text>
 <line x1='342.94' y1='101.90' x2='342.94' y2='169.17' style='stroke-width: 2.13; stroke: #555555; stroke-linecap: butt;' />
 <polyline points='338.87,162.12 342.94,169.17 347.02,162.12 ' style='stroke-width: 2.13; stroke: #555555; stroke-linecap: butt;' />
 <text transform='translate(341.51,78.03) rotate(-45)' text-anchor='middle' style='font-size: 11.38px; font-family: Arial;' textLength='25.31px' lengthAdjust='spacingAndGlyphs'>0.1.0</text>
