@@ -63,7 +63,7 @@ extract_digits <- function(x, check = 'first', include.zero = FALSE) {
     if (include.zero) {
       # Subtract integer portion of number from the number itself
       stringedX <- format(abs(x)%%1, drop0trailing = FALSE)
-      digits <- as.numeric(substring(stringedX, 3, nchar(stringedX)))
+      digits <- ifelse(nchar(stringedX) == 1, yes = as.numeric(stringedX), no = as.numeric(substring(stringedX, 3, nchar(stringedX))))
     } else {
       # Subtract integer portion of number from the number itself
       stringedX <- format(abs(x)%%1, drop0trailing = TRUE)

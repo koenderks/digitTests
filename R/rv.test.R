@@ -80,7 +80,7 @@ rv.test <- function(x, check = 'last', method = 'af', B = 2000) {
   }
 
   pval <- switch(method, "af" = mean(storage >= statistic), "entropy" = mean(storage <= statistic))
-  cortest <- stats::cor.test(integers, decimals)
+  cortest <- try({ stats::cor.test(integers, decimals) })
   
   names(n) <- "n"
   names(statistic) <- switch(method, "af" = "AF", "entropy" = "S")
@@ -96,7 +96,7 @@ rv.test <- function(x, check = 'last', method = 'af', B = 2000) {
                  integers = table(integers),
                  decimals = table(decimals),
                  n = n,
-                 cor.test = cortest,
+                 cor.test = if (class(cortest) != "try-error") cortest else NULL,
                  check = check,
                  method = method,
                  data.name = dname)

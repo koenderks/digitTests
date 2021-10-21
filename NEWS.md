@@ -1,3 +1,9 @@
+# digitTests 0.1.1
+
+**Bug fixes**
+
+- Throw a warning when there is zero variance in either the decimal portions of the number or its integer portions.
+
 # digitTests 0.1.0
 
 **New features**
