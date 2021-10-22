@@ -53,10 +53,10 @@
 <polyline points='531.73,363.38 531.73,37.76 ' style='stroke-width: 1.07; stroke: #FFFFFF; stroke-linecap: butt;' />
 <rect x='70.60' y='235.94' width='167.12' height='112.64' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
 <rect x='262.48' y='224.02' width='167.12' height='124.56' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
-<rect x='448.17' y='182.50' width='167.12' height='166.08' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
+<rect x='448.17' y='179.81' width='167.12' height='168.77' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
 <text x='154.16' y='220.66' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>293</text>
 <text x='346.04' y='208.75' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>324</text>
-<text x='531.73' y='167.23' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>432</text>
+<text x='531.73' y='164.54' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>439</text>
 <line x1='154.16' y1='89.08' x2='154.16' y2='117.91' style='stroke-width: 2.13; stroke: #555555; stroke-linecap: butt;' />
 <polyline points='150.09,110.86 154.16,117.91 158.23,110.86 ' style='stroke-width: 2.13; stroke: #555555; stroke-linecap: butt;' />
 <text transform='translate(152.72,78.03) rotate(-45)' text-anchor='middle' style='font-size: 11.38px; font-family: Arial;' textLength='25.31px' lengthAdjust='spacingAndGlyphs'>0.1.0</text>
