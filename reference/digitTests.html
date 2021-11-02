@@ -147,7 +147,7 @@ The package and its analyses are also implemented with a graphical user interfac
 
  
 <p>Please use the citation provided by <span style="R">R</span> when citing this package. 
-  A BibTex entry is available from <code><a href='https://rdrr.io/r/utils/citation.html'>citation("digitTests")</a></code>.</p>
+  A BibTex entry is available from <code>citation("digitTests")</code>.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Useful links:</p><ul>
@@ -156,35 +156,37 @@ The package and its analyses are also implemented with a graphical user interfac
 </div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='co'># Load the digitTests package</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://koenderks.github.io/digitTests/'>digitTests</a></span><span class='op'>)</span>
-
-<span class='co'>############################################</span>
-<span class='co'>### Example 1: Benford's Law ####</span>
-<span class='co'>############################################</span>
-
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>'sinoForest'</span><span class='op'>)</span>
-<span class='fu'><a href='distr.test.html'>distr.test</a></span><span class='op'>(</span><span class='va'>sinoForest</span><span class='op'>$</span><span class='va'>value</span>, check <span class='op'>=</span> <span class='st'>'first'</span>, reference <span class='op'>=</span> <span class='st'>'benford'</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; 
-#&gt; 	Digit distribution test
-#&gt; 
-#&gt; data:  sinoForest$value
-#&gt; n = 772, X-squared = 7.6517, df = 8, p-value = 0.4682
-#&gt; alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.</div><div class='input'>
-<span class='co'>###################################</span>
-<span class='co'>### Example 2: Repeated Values ####</span>
-<span class='co'>###################################</span>
-
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>'sanitizer'</span><span class='op'>)</span>
-<span class='fu'><a href='rv.test.html'>rv.test</a></span><span class='op'>(</span><span class='va'>sanitizer</span><span class='op'>$</span><span class='va'>value</span>, check <span class='op'>=</span> <span class='st'>'lasttwo'</span>, method <span class='op'>=</span> <span class='st'>'af'</span>, B <span class='op'>=</span> <span class='fl'>1000</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; 
-#&gt; 	Repeated values test
-#&gt; 
-#&gt; data:  sanitizer$value
-#&gt; n = 1600, AF = 1.5225, p-value = 0.003
-#&gt; alternative hypothesis: average frequency in data is greater than for random data.</div><div class='input'>
-</div></pre>
+    <pre class="examples"><span class='r-in'></span>
+<span class='r-in'><span class='co'># Load the digitTests package</span></span>
+<span class='r-in'><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://koenderks.github.io/digitTests/'>digitTests</a></span><span class='op'>)</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>############################################</span></span>
+<span class='r-in'><span class='co'>### Example 1: Benford's Law ####</span></span>
+<span class='r-in'><span class='co'>############################################</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>'sinoForest'</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='distr.test.html'>distr.test</a></span><span class='op'>(</span><span class='va'>sinoForest</span><span class='op'>$</span><span class='va'>value</span>, check <span class='op'>=</span> <span class='st'>'first'</span>, reference <span class='op'>=</span> <span class='st'>'benford'</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 	Digit distribution test</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> data:  sinoForest$value</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> n = 772, X-squared = 7.6517, df = 8, p-value = 0.4682</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.</span>
+<span class='r-in'></span>
+<span class='r-in'><span class='co'>###################################</span></span>
+<span class='r-in'><span class='co'>### Example 2: Repeated Values ####</span></span>
+<span class='r-in'><span class='co'>###################################</span></span>
+<span class='r-in'></span>
+<span class='r-in'><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>'sanitizer'</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'><a href='rv.test.html'>rv.test</a></span><span class='op'>(</span><span class='va'>sanitizer</span><span class='op'>$</span><span class='va'>value</span>, check <span class='op'>=</span> <span class='st'>'lasttwo'</span>, method <span class='op'>=</span> <span class='st'>'af'</span>, B <span class='op'>=</span> <span class='fl'>1000</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> 	Repeated values test</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> data:  sanitizer$value</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> n = 1600, AF = 1.5225, p-value = 0.003</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> alternative hypothesis: average frequency in data is greater than for random data.</span>
+<span class='r-in'></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
