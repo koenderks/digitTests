@@ -11,7 +11,7 @@
 
 `digitTests` is an R package providing statistical tests for detecting irregular digit patterns. Such irregular digit patterns can be an indication of potential data manipulation or fraud. Therefore, the type of tests that the package provides can be useful in (but not limited to) the field of auditing to assess whether data have potentially been tampered with. However, please note that real data will never be perfect, and therefore caution should be used when relying on the statistical decision metrics that the package provides.
 
-The package is also implemented with a graphical user interface in the Audit module of [JASP](https://jasp-stats.org), a free and open-source statistical software program.
+The package is also implemented with a graphical user interface in the [Audit](https://github.com/jasp-stats/jaspAudit) module of [JASP](https://jasp-stats.org), a free and open-source statistical software program.
 
 ## Overview
 
