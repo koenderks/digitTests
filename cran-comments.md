@@ -1,7 +1,7 @@
-## This is a submission for version 0.1.0
-This is digitTests version 0.1.0. In this version I have:
+## This is a submission for version 0.1.1
+This is digitTests version 0.1.1. In this version I have:
 
-* Implemented the first two functions and internals for the package.
+* Fixed a bug in one of the functions.
 
 ## Test environments
 * Windows install (on GitHub actions), R release
