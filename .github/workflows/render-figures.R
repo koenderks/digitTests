@@ -20,8 +20,8 @@ xBreaks           <- plotData[['date']]
 yBreaks           <- pretty(c(0, plotData[['count']], max(plotData[['count']]) + 200), n = 6)
 
 # Specify the specific release dates (rounded down)
-releases          <- c('2021-08-01')
-releaseLabs       <- c('0.1.0')
+releases          <- c('2021-08-01', '2021-11-01')
+releaseLabs       <- c('0.1.0', '0.1.1')
 
 # Create the figure
 p <- ggplot2::ggplot(plotData, ggplot2::aes(x = date, y = count)) +
