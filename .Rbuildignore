@@ -11,3 +11,4 @@
 ^pkgdown$
 dtRelease.R
 ^CRAN-RELEASE$
+^LICENSE\.md$
