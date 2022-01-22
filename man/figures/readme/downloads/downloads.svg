@@ -62,13 +62,13 @@
 <rect x='259.51' y='191.34' width='80.79' height='157.24' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
 <rect x='352.27' y='143.86' width='80.79' height='204.72' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
 <rect x='442.04' y='268.23' width='80.79' height='80.35' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
-<rect x='534.80' y='304.37' width='80.79' height='44.21' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
+<rect x='534.80' y='300.91' width='80.79' height='47.67' style='stroke-width: 2.13; stroke-linecap: square; stroke-linejoin: miter; fill: #32CD87;' />
 <text x='117.37' y='286.60' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>293</text>
 <text x='210.13' y='280.64' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>324</text>
 <text x='299.90' y='185.68' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>818</text>
 <text x='392.66' y='138.20' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='24.54px' lengthAdjust='spacingAndGlyphs'>1065</text>
 <text x='482.43' y='262.57' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>418</text>
-<text x='575.19' y='298.71' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>230</text>
+<text x='575.19' y='295.25' text-anchor='middle' style='font-size: 11.04px; font-family: Arial;' textLength='18.40px' lengthAdjust='spacingAndGlyphs'>248</text>
 <line x1='117.37' y1='84.27' x2='117.37' y2='98.69' style='stroke-width: 2.13; stroke: #555555; stroke-linecap: butt;' />
 <polyline points='113.30,91.64 117.37,98.69 121.44,91.64 ' style='stroke-width: 2.13; stroke: #555555; stroke-linecap: butt;' />
 <line x1='392.66' y1='84.27' x2='392.66' y2='98.69' style='stroke-width: 2.13; stroke: #555555; stroke-linecap: butt;' />
