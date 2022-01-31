@@ -21,7 +21,6 @@ For complete documentation of the `digitTests` package download the [package man
 2. [Benchmarks](#2-benchmarks)
 3. [Intended usage](#3-intended-usage)
 4. [References](#4-references)
-5. [Package statistics](#5-package-statistics)
 
 ## 1. Installation
 
@@ -169,7 +168,3 @@ rv.test(sanitizer$value, check = 'lasttwo', B = 5000)
 - Kass, R. E., & Raftery, A. E. (1995). Bayes factors. *Journal of the American Statistical Association*, *90*(430), 773-795. - [View online](https://www.tandfonline.com/doi/abs/10.1080/01621459.1995.10476572)
 - Simohnsohn, U. (2019, May 25). *Number-Bunching: A New Tool for Forensic Data Analysis*. - [View online](https://datacolada.org/77)
 - Yo, F., Nelson, L., & Simonsohn, U. (2018, December 5). *In Press at Psychological Science: A New 'Nudge' Supported by Implausible Data*. - [View online](https://datacolada.org/74)
-
-## 5. Package statistics
-
-<img src='https://github.com/koenderks/digitTests/raw/development/man/figures/readme/downloads/downloads.svg' width='50%' /><img src='https://github.com/koenderks/digitTests/raw/development/man/figures/readme/worldmap/worldmap.svg' width='50%' />
