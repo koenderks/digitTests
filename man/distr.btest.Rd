@@ -16,7 +16,7 @@ distr.btest(x, check = 'first', reference = 'benford',
 
 \item{alpha}{a numeric vector containing the prior parameters for the Dirichlet distribution on the digit categories.}
 
-\item{BF10}{logical. Whether to whether to compute the Bayes factor in favor of the alternative hypothesis (BF10) or the null hypothesis (BF01).}
+\item{BF10}{logical. Whether to compute the Bayes factor in favor of the alternative hypothesis (BF10) or the null hypothesis (BF01).}
 
 \item{log}{logical. Whether to return the logarithm of the Bayes factor.}
 }

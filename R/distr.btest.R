@@ -24,7 +24,7 @@
 #' @param check          location of the digits to analyze. Can be \code{first}, \code{firsttwo}, or \code{last}.
 #' @param reference      which character string given the reference distribution for the digits, or a vector of probabilities for each digit. Can be \code{benford} for Benford's law, \code{uniform} for the uniform distribution. An error is given if any entry of \code{reference} is negative. Probabilities that do not sum to one are normalized.
 #' @param alpha          a numeric vector containing the prior parameters for the Dirichlet distribution on the digit categories.
-#' @param BF10           logical. Whether to whether to compute the Bayes factor in favor of the alternative hypothesis (BF10) or the null hypothesis (BF01).
+#' @param BF10           logical. Whether to compute the Bayes factor in favor of the alternative hypothesis (BF10) or the null hypothesis (BF01).
 #' @param log            logical. Whether to return the logarithm of the Bayes factor.
 #'
 #' @details Benford's law is defined as \eqn{p(d) = log10(1/d)}. The uniform distribution is defined as \eqn{p(d) = 1/d}.
