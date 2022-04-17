@@ -12,3 +12,5 @@
 dtRelease.R
 ^CRAN-RELEASE$
 ^LICENSE\.md$
+^CITATION\.cff$
+^\.github$
