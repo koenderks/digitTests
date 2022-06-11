@@ -4,7 +4,7 @@
 \docType{package}
 \title{digitTests: Tests for Detecting Irregular Data Patterns}
 \description{
-  \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+  \if{html}{\figure{logo.png}{options: alt='logo' width='120' style='float: right'}}
 
   \code{digitTests} is an \R package providing tests for detecting irregular data patterns.
   
