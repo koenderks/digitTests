@@ -1,7 +1,7 @@
-## This is a submission for version 0.1.1
-This is digitTests version 0.1.1. In this version I have:
+## This is a submission for version 0.1.2
+This is digitTests version 0.1.2. In this version I have:
 
-* Fixed a bug in one of the functions.
+* Fixed cran not `digitTests.Rd:23:4: Warning: <img> attribute "align" not allowed for HTML5`.
 
 ## Test environments
 * Windows install (on GitHub actions), R release
