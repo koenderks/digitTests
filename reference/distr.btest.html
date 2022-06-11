@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">digitTests</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.2</span>
       </span>
     </div>
 
@@ -64,40 +64,63 @@
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>a numeric vector.</p></dd>
+
+
 <dt>check</dt>
 <dd><p>location of the digits to analyze. Can be <code>first</code>, <code>firsttwo</code>, or <code>last</code>.</p></dd>
+
+
 <dt>reference</dt>
 <dd><p>which character string given the reference distribution for the digits, or a vector of probabilities for each digit. Can be <code>benford</code> for Benford's law, <code>uniform</code> for the uniform distribution. An error is given if any entry of <code>reference</code> is negative. Probabilities that do not sum to one are normalized.</p></dd>
+
+
 <dt>alpha</dt>
 <dd><p>a numeric vector containing the prior parameters for the Dirichlet distribution on the digit categories.</p></dd>
+
+
 <dt>BF10</dt>
 <dd><p>logical. Whether to compute the Bayes factor in favor of the alternative hypothesis (BF10) or the null hypothesis (BF01).</p></dd>
+
+
 <dt>log</dt>
 <dd><p>logical. Whether to return the logarithm of the Bayes factor.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An object of class <code>dt.distr</code> containing:</p>
+    
+
+<p>An object of class <code>dt.distr</code> containing:</p>
 <dl><dt>observed</dt>
 <dd><p>the observed counts.</p></dd>
+
 <dt>expected</dt>
 <dd><p>the expected counts under the null hypothesis.</p></dd>
+
 <dt>n</dt>
 <dd><p>the number of observations in <code>x</code>.</p></dd>
+
 <dt>statistic</dt>
 <dd><p>the value the chi-squared test statistic.</p></dd>
+
 <dt>parameter</dt>
 <dd><p>the degrees of freedom of the approximate chi-squared distribution of the test statistic.</p></dd>
+
 <dt>p.value</dt>
 <dd><p>the p-value for the test.</p></dd>
+
 <dt>check</dt>
 <dd><p>checked digits.</p></dd>
+
 <dt>digits</dt>
 <dd><p>vector of digits.</p></dd>
+
 <dt>reference</dt>
 <dd><p>reference distribution</p></dd>
+
 <dt>data.name</dt>
 <dd><p>a character string giving the name(s) of the data.</p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -163,7 +186,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer></div>

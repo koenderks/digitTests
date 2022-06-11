@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">digitTests</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.2</span>
       </span>
     </div>
 
@@ -63,40 +63,61 @@
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>a numeric vector of values from which the digits should be analyzed.</p></dd>
+
+
 <dt>check</dt>
 <dd><p>which digits to shuffle during the procedure. Can be <code>last</code> or <code>lasttwo</code>.</p></dd>
+
+
 <dt>method</dt>
 <dd><p>which property of the data is calculated. Defaults to <code>af</code> for average frequency, but can also be <code>entropy</code> for entropy.</p></dd>
+
+
 <dt>B</dt>
 <dd><p>how many samples to use in the bootstraping procedure.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An object of class <code>dt.rv</code> containing:</p>
+    
+
+<p>An object of class <code>dt.rv</code> containing:</p>
 <dl><dt>x</dt>
 <dd><p>input data.</p></dd>
+
 <dt>frequencies</dt>
 <dd><p>frequencies of observations in <code>x</code>.</p></dd>
+
 <dt>samples</dt>
 <dd><p>vector of simulated samples.</p></dd>
+
 <dt>integers</dt>
 <dd><p>counts for extracted integers.</p></dd>
+
 <dt>decimals</dt>
 <dd><p>counts for extracted decimals.</p></dd>
+
 <dt>n</dt>
 <dd><p>the number of observations in <code>x</code>.</p></dd>
+
 <dt>statistic</dt>
 <dd><p>the value the average frequency or entropy statistic.</p></dd>
+
 <dt>p.value</dt>
 <dd><p>the p-value for the test.</p></dd>
+
 <dt>cor.test</dt>
 <dd><p>correlation test for the integer portions of the number versus the decimals portions of the number.</p></dd>
+
 <dt>method</dt>
 <dd><p>method used.</p></dd>
+
 <dt>check</dt>
 <dd><p>checked digits.</p></dd>
+
 <dt>data.name</dt>
 <dd><p>a character string giving the name(s) of the data.</p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -144,7 +165,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer></div>
