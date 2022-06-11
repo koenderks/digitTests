@@ -8,7 +8,7 @@ message: 'To cite package "digitTests" in publications use:'
 type: software
 license: GPL-3.0-or-later
 title: 'digitTests: Tests for Detecting Irregular Digit Patterns'
-version: 0.1.1
+version: 0.1.2
 abstract: Provides statistical tests and support functions for detecting irregular
   digit patterns in numerical data. The package includes tools for extracting digits
   at various locations in a number, tests for repeated values, and (Bayesian) tests
@@ -32,7 +32,7 @@ preferred-citation:
 repository: https://CRAN.R-project.org/package=digitTests
 repository-code: https://github.com/koenderks/digitTests
 url: https://koenderks.github.io/digitTests/
-date-released: '2021-11-09'
+date-released: '2022-06-11'
 contact:
 - family-names: Derks
   given-names: Koen
