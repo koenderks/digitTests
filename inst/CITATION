@@ -3,7 +3,7 @@ citHeader("To cite digitTests in publications, please use:")
 bibentry(bibtype = "Manual",
          title = "digitTests: Tests for Detecting Irregular Data Patterns",
          author = person("Koen", "Derks"),
-         year = "2021",
-         note = "R package version 0.1.0",
+         year = "2022",
+         note = "R package version 0.1.2",
          url = "https://CRAN.R-project.org/package=digitTests",
-		 textVersion = "Derks, K. (2021). digitTests: Tests for Detecting Irregular Data Patterns. R package version 0.1.0.")
+		 textVersion = "Derks, K. (2022). digitTests: Tests for Detecting Irregular Data Patterns. R package version 0.1.2.")

@@ -1,3 +1,9 @@
+# digitTests 0.1.2
+
+**Minor changes**
+
+- Resolved CRAN note `Warning: <img> attribute "align" not allowed for HTML5`.
+
 # digitTests 0.1.1
 
 **Bug fixes**
