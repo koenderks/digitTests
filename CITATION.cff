@@ -26,13 +26,13 @@ preferred-citation:
     given-names: Koen
     email: k.derks@nyenrode.nl
     orcid: https://orcid.org/0000-0002-5533-9349
-  year: '2021'
-  notes: R package version 0.1.0
+  year: '2022'
+  notes: R package version 0.1.2
   url: https://CRAN.R-project.org/package=digitTests
 repository: https://CRAN.R-project.org/package=digitTests
 repository-code: https://github.com/koenderks/digitTests
 url: https://koenderks.github.io/digitTests/
-date-released: '2022-06-11'
+date-released: '2022-06-16'
 contact:
 - family-names: Derks
   given-names: Koen
