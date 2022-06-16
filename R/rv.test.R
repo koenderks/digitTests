@@ -111,7 +111,7 @@ rv.test <- function(x, check = 'last', method = 'af', B = 2000) {
                  integers = table(integers),
                  decimals = table(decimals),
                  n = n,
-                 cor.test = if (class(cortest) != "try-error") cortest else NULL,
+                 cor.test = if (!inherits(cortest, "try-error")) cortest else NULL,
                  check = check,
                  method = method,
                  data.name = dname)
