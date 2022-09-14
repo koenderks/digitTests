@@ -75,36 +75,36 @@ The package and its analyses are also implemented with a graphical user interfac
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co"># Load the digitTests package</span></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://koenderks.github.io/digitTests/" class="external-link">digitTests</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">############################################</span></span>
-<span class="r-in"><span class="co">### Example 1: Benford's Law ####</span></span>
-<span class="r-in"><span class="co">############################################</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'sinoForest'</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="distr.test.html">distr.test</a></span><span class="op">(</span><span class="va">sinoForest</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Load the digitTests package</span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://koenderks.github.io/digitTests/" class="external-link">digitTests</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">############################################</span></span></span>
+<span class="r-in"><span><span class="co">### Example 1: Benford's Law ####</span></span></span>
+<span class="r-in"><span><span class="co">############################################</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'sinoForest'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="distr.test.html">distr.test</a></span><span class="op">(</span><span class="va">sinoForest</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 	Digit distribution test</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data:  sinoForest$value</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> n = 772, X-squared = 7.6517, df = 8, p-value = 0.4682</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co">###################################</span></span>
-<span class="r-in"><span class="co">### Example 2: Repeated Values ####</span></span>
-<span class="r-in"><span class="co">###################################</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'sanitizer'</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu"><a href="rv.test.html">rv.test</a></span><span class="op">(</span><span class="va">sanitizer</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'lasttwo'</span>, method <span class="op">=</span> <span class="st">'af'</span>, B <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co">###################################</span></span></span>
+<span class="r-in"><span><span class="co">### Example 2: Repeated Values ####</span></span></span>
+<span class="r-in"><span><span class="co">###################################</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">'sanitizer'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="rv.test.html">rv.test</a></span><span class="op">(</span><span class="va">sanitizer</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'lasttwo'</span>, method <span class="op">=</span> <span class="st">'af'</span>, B <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 	Repeated values test</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data:  sanitizer$value</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> n = 1600, AF = 1.5225, p-value = 0.002</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> alternative hypothesis: average frequency in data is greater than for random data.</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -119,7 +119,7 @@ The package and its analyses are also implemented with a graphical user interfac
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

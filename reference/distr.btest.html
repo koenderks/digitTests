@@ -56,8 +56,8 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">distr.btest</span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span>, 
-            alpha <span class="op">=</span> <span class="cn">NULL</span>, BF10 <span class="op">=</span> <span class="cn">TRUE</span>, log <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">distr.btest</span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span>, </span>
+<span>            alpha <span class="op">=</span> <span class="cn">NULL</span>, BF10 <span class="op">=</span> <span class="cn">TRUE</span>, log <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -142,36 +142,36 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Bayesian digit analysis against Benford's law</span></span>
-<span class="r-in"><span class="fu">distr.btest</span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Bayesian digit analysis against Benford's law</span></span></span>
+<span class="r-in"><span><span class="fu">distr.btest</span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 	Digit distribution test</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data:  x</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> n = 100, BF10 = 0.019696</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Bayesian digit analysis against Benford's law, custom prior</span></span>
-<span class="r-in"><span class="fu">distr.btest</span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span>, alpha <span class="op">=</span> <span class="fl">9</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Bayesian digit analysis against Benford's law, custom prior</span></span></span>
+<span class="r-in"><span><span class="fu">distr.btest</span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span>, alpha <span class="op">=</span> <span class="fl">9</span><span class="op">:</span><span class="fl">1</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 	Digit distribution test</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data:  x</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> n = 100, BF10 = 0.56808</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># Bayesian digit analysis against custom distribution</span></span>
-<span class="r-in"><span class="fu">distr.btest</span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'last'</span>, reference <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">9</span>, <span class="fl">9</span><span class="op">)</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Bayesian digit analysis against custom distribution</span></span></span>
+<span class="r-in"><span><span class="fu">distr.btest</span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'last'</span>, reference <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/rep.html" class="external-link">rep</a></span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="fl">9</span>, <span class="fl">9</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 	Digit distribution test</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> data:  x</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> n = 100, BF10 = 0.00018458</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> alternative hypothesis: last digit(s) are not distributed according to the reference distribution.</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -186,7 +186,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>

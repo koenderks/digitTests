@@ -99,13 +99,13 @@
 </h2>
 <p>The most recently released version of <code>digitTests</code> can be downloaded from <a href="https://cran.r-project.org/package=digitTests" class="external-link">CRAN</a> by running the following command in R:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'digitTests'</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'digitTests'</span><span class="op">)</span></span></code></pre></div>
 <p>Alternatively, you can download the development version from GitHub using:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'koenderks/digitTests'</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'koenderks/digitTests'</span><span class="op">)</span></span></code></pre></div>
 <p>After installation, the package can be loaded with:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://koenderks.github.io/digitTests/" class="external-link">digitTests</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://koenderks.github.io/digitTests/" class="external-link">digitTests</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="2-benchmarks">2. Benchmarks<a class="anchor" aria-label="anchor" href="#2-benchmarks"></a>
@@ -130,7 +130,7 @@
 <p>The workhorse of the package is the <code><a href="reference/extract_digits.html">extract_digits()</a></code> function. This function takes a vector of numbers and returns the requested digits (with or without including <code>0</code>’s).</p>
 <p><em>Full function with default arguments:</em></p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/extract_digits.html">extract_digits</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, include.zero <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/extract_digits.html">extract_digits</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, include.zero <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p><em>Supported options for the <code>check</code> argument:</em></p>
 <table class="table">
 <thead><tr class="header">
@@ -166,9 +166,9 @@
 </table>
 <p><em>Example:</em></p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.00</span>, <span class="fl">0.20</span>, <span class="fl">1.23</span>, <span class="fl">40.00</span>, <span class="fl">54.04</span><span class="op">)</span>
-<span class="fu"><a href="reference/extract_digits.html">extract_digits</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, include.zero <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-<span class="co"># [1] NA  2  1  4  5</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.00</span>, <span class="fl">0.20</span>, <span class="fl">1.23</span>, <span class="fl">40.00</span>, <span class="fl">54.04</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/extract_digits.html">extract_digits</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, include.zero <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co"># [1] NA  2  1  4  5</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="functions-distrtest--distrbtest">Functions: <code>distr.test()</code> &amp; <code>distr.btest()</code>
@@ -177,8 +177,8 @@
 <p>The functions <code><a href="reference/distr.test.html">distr.test()</a></code> and <code><a href="reference/distr.btest.html">distr.btest()</a></code> take a vector of numeric values, extract the requested digits, and compares the frequencies of these digits to a reference distribution. The function <code><a href="reference/distr.test.html">distr.test()</a></code> performs a frequentist hypothesis test of the null hypothesis that the digits are distributed according to the reference distribution and produces a <em>p</em> value. The function <code><a href="reference/distr.btest.html">distr.btest()</a></code> performs a Bayesian hypothesis test of the null hypothesis that the digits are distributed according to the reference distribution against the alternative hypothesis (using the prior parameters specified in <code>alpha</code>) that the digits are not distributed according to the reference distribution and produces a Bayes factor (Kass &amp; Raftery, 1995). The possible options for the <code>check</code> argument are taken over from <code><a href="reference/extract_digits.html">extract_digits()</a></code>.</p>
 <p><em>Full function with default arguments:</em></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/distr.test.html">distr.test</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span>
-<span class="fu"><a href="reference/distr.btest.html">distr.btest</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span>, alpha <span class="op">=</span> <span class="cn">NULL</span>, BF10 <span class="op">=</span> <span class="cn">TRUE</span>, log <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/distr.test.html">distr.test</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/distr.btest.html">distr.btest</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span>, alpha <span class="op">=</span> <span class="cn">NULL</span>, BF10 <span class="op">=</span> <span class="cn">TRUE</span>, log <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p><em>Supported options for the <code>reference</code> argument:</em></p>
 <table class="table">
 <thead><tr class="header">
@@ -205,25 +205,25 @@
 <p><img src="https://latex.codecogs.com/svg.image?p(d_i)&amp;space;=&amp;space;%5Ctext%7Blog%7D_%7B10%7D(1&amp;space;+&amp;space;%5Cfrac%7B1%7D%7Bd_i%7D)" title="p(d_i) = \text{log}_{10}(\frac{1}{d_i})"></p>
 <p>The distribution of leading digits in a data set of financial transaction values (e.g., the <code>sinoForest</code> data) can be extracted and tested against the expected frequencies under Benford’s law using the code below.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Frequentist hypothesis test</span>
-<span class="fu"><a href="reference/distr.test.html">distr.test</a></span><span class="op">(</span><span class="va">sinoForest</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span>
-
-<span class="co">#</span>
-<span class="co">#   Digit distribution test</span>
-<span class="co">#</span>
-<span class="co"># data:  sinoForest$value</span>
-<span class="co"># n = 772, X-squared = 7.6517, df = 8, p-value = 0.4682</span>
-<span class="co"># alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.</span>
-
-<span class="co"># Bayesian hypothesis test using default prior</span>
-<span class="fu"><a href="reference/distr.btest.html">distr.btest</a></span><span class="op">(</span><span class="va">sinoForest</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span>, BF10 <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-
-<span class="co">#</span>
-<span class="co">#   Digit distribution test</span>
-<span class="co">#</span>
-<span class="co"># data:  sinoForest$value</span>
-<span class="co"># n = 772, BF01 = 6899678</span>
-<span class="co"># alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Frequentist hypothesis test</span></span>
+<span><span class="fu"><a href="reference/distr.test.html">distr.test</a></span><span class="op">(</span><span class="va">sinoForest</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#</span></span>
+<span><span class="co">#   Digit distribution test</span></span>
+<span><span class="co">#</span></span>
+<span><span class="co"># data:  sinoForest$value</span></span>
+<span><span class="co"># n = 772, X-squared = 7.6517, df = 8, p-value = 0.4682</span></span>
+<span><span class="co"># alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.</span></span>
+<span></span>
+<span><span class="co"># Bayesian hypothesis test using default prior</span></span>
+<span><span class="fu"><a href="reference/distr.btest.html">distr.btest</a></span><span class="op">(</span><span class="va">sinoForest</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span>, BF10 <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#</span></span>
+<span><span class="co">#   Digit distribution test</span></span>
+<span><span class="co">#</span></span>
+<span><span class="co"># data:  sinoForest$value</span></span>
+<span><span class="co"># n = 772, BF01 = 6899678</span></span>
+<span><span class="co"># alternative hypothesis: leading digit(s) are not distributed according to the benford distribution.</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="function-rvtest">Function: <code>rv.test()</code>
@@ -232,7 +232,7 @@
 <p>The function <code><a href="reference/rv.test.html">rv.test()</a></code> analyzes the frequency with which values get repeated within a set of numbers. Unlike Benford’s law, and its generalizations, this approach examines the entire number at once, not only the first or last digit. For the technical details of this procedure, see Simohnsohn (2019). The possible options for the <code>check</code> argument are taken over from <code><a href="reference/extract_digits.html">extract_digits()</a></code>.</p>
 <p><em>Full function with default arguments:</em></p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/rv.test.html">rv.test</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'last'</span>, method <span class="op">=</span> <span class="st">'af'</span>, B <span class="op">=</span> <span class="fl">2000</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/rv.test.html">rv.test</a></span><span class="op">(</span><span class="va">x</span>, check <span class="op">=</span> <span class="st">'last'</span>, method <span class="op">=</span> <span class="st">'af'</span>, B <span class="op">=</span> <span class="fl">2000</span><span class="op">)</span></span></code></pre></div>
 <p><em>Supported options for the <code>method</code> argument:</em></p>
 <table class="table">
 <thead><tr class="header">
@@ -253,14 +253,14 @@
 <p><em>Example:</em></p>
 <p>In this example we analyze a data set from a (retracted) paper that describes three experiments run in Chinese factories, where workers were nudged to use more hand-sanitizer. These data were shown to exhibited two classic markers of data tampering: impossibly similar means and the uneven distribution of last digits (Yu, Nelson, &amp; Simohnson, 2018). We can use the <code><a href="reference/rv.test.html">rv.test()</a></code> function to test if these data also contain a greater amount of repeated values than expected if the data were not tampered with.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/rv.test.html">rv.test</a></span><span class="op">(</span><span class="va">sanitizer</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'lasttwo'</span>, B <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span>
-
-<span class="co">#</span>
-<span class="co">#   Repeated values test</span>
-<span class="co">#</span>
-<span class="co"># data:  sanitizer$value</span>
-<span class="co"># n = 1600, AF = 1.5225, p-value = 0.0024</span>
-<span class="co"># alternative hypothesis: frequencies of repeated values are greater than for random data.</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/rv.test.html">rv.test</a></span><span class="op">(</span><span class="va">sanitizer</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'lasttwo'</span>, B <span class="op">=</span> <span class="fl">5000</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co">#</span></span>
+<span><span class="co">#   Repeated values test</span></span>
+<span><span class="co">#</span></span>
+<span><span class="co"># data:  sanitizer$value</span></span>
+<span><span class="co"># n = 1600, AF = 1.5225, p-value = 0.0024</span></span>
+<span><span class="co"># alternative hypothesis: frequencies of repeated values are greater than for random data.</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -343,7 +343,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
