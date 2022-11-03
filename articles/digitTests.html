@@ -79,7 +79,8 @@
       <h1 data-toc-skip>Get started</h1>
                         <h4 data-toc-skip class="author">Koen Derks</h4>
             
-            <h4 data-toc-skip class="date">last modified: 11-08-2021</h4>
+            <h4 data-toc-skip class="date">last modified:
+11-08-2021</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/koenderks/digitTests/blob/HEAD/vignettes/digitTests.Rmd" class="external-link"><code>vignettes/digitTests.Rmd</code></a></small>
       <div class="hidden name"><code>digitTests.Rmd</code></div>
@@ -88,11 +89,15 @@
 
     
     
-<p>Welcome to the ‘Get started’ page of the <code>digitTests</code> package. In this vignette you are able to find detailed examples of how you can incorporate the functions provided by the package.</p>
+<p>Welcome to the ‘Get started’ page of the <code>digitTests</code>
+package. In this vignette you are able to find detailed examples of how
+you can incorporate the functions provided by the package.</p>
 <div class="section level2">
 <h2 id="function-extract_digits">Function: <code>extract_digits()</code><a class="anchor" aria-label="anchor" href="#function-extract_digits"></a>
 </h2>
-<p>The workhorse of the package is the <code><a href="../reference/extract_digits.html">extract_digits()</a></code> function. This function takes a vector of numbers and returns the requested digits (with or without including <code>0</code>’s).</p>
+<p>The workhorse of the package is the <code><a href="../reference/extract_digits.html">extract_digits()</a></code>
+function. This function takes a vector of numbers and returns the
+requested digits (with or without including <code>0</code>’s).</p>
 <p><em>Example:</em></p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.00</span>, <span class="fl">0.20</span>, <span class="fl">1.23</span>, <span class="fl">40.00</span>, <span class="fl">54.04</span><span class="op">)</span></span>
@@ -100,11 +105,32 @@
 <pre><code><span><span class="co">## [1] NA  2  1  4  5</span></span></code></pre>
 </div>
 <div class="section level2">
-<h2 id="functions-distr-test-distr-btest">Functions: <code>distr.test()</code> &amp; <code>distr.btest()</code><a class="anchor" aria-label="anchor" href="#functions-distr-test-distr-btest"></a>
+<h2 id="functions-distr-test-distr-btest">Functions: <code>distr.test()</code> &amp;
+<code>distr.btest()</code><a class="anchor" aria-label="anchor" href="#functions-distr-test-distr-btest"></a>
 </h2>
-<p>The functions <code><a href="../reference/distr.test.html">distr.test()</a></code> and <code><a href="../reference/distr.btest.html">distr.btest()</a></code> take a vector of numeric values, extract the requested digits, and compares the frequencies of these digits to a reference distribution. The function <code><a href="../reference/distr.test.html">distr.test()</a></code> performs a frequentist hypothesis test of the null hypothesis that the digits are distributed according to the reference distribution and produces a <em>p</em> value. The function <code><a href="../reference/distr.btest.html">distr.btest()</a></code> performs a Bayesian hypothesis test of the null hypothesis that the digits are distributed according to the reference distribution against the alternative hypothesis (using the prior parameters specified in <code>alpha</code>) that the digits are not distributed according to the reference distribution and produces a Bayes factor (Kass &amp; Raftery, 1995). The possible options for the <code>check</code> argument are taken over from <code><a href="../reference/extract_digits.html">extract_digits()</a></code>.</p>
+<p>The functions <code><a href="../reference/distr.test.html">distr.test()</a></code> and
+<code><a href="../reference/distr.btest.html">distr.btest()</a></code> take a vector of numeric values, extract the
+requested digits, and compares the frequencies of these digits to a
+reference distribution. The function <code><a href="../reference/distr.test.html">distr.test()</a></code> performs
+a frequentist hypothesis test of the null hypothesis that the digits are
+distributed according to the reference distribution and produces a
+<em>p</em> value. The function <code><a href="../reference/distr.btest.html">distr.btest()</a></code> performs a
+Bayesian hypothesis test of the null hypothesis that the digits are
+distributed according to the reference distribution against the
+alternative hypothesis (using the prior parameters specified in
+<code>alpha</code>) that the digits are not distributed according to the
+reference distribution and produces a Bayes factor (Kass &amp; Raftery,
+1995). The possible options for the <code>check</code> argument are
+taken over from <code><a href="../reference/extract_digits.html">extract_digits()</a></code>.</p>
 <p><em>Example:</em></p>
-<p>Benford’s law (Benford, 1938) is a principle that describes a pattern in many naturally-occurring numbers. According to Benford’s law, each possible leading digit <em>d</em> in a naturally occurring, or non-manipulated, set of numbers occurs with a probability p(d) = log10(1 + 1/d). The distribution of leading digits in a data set of financial transaction values (e.g., the <code>sinoForest</code> data) can be extracted and tested against the expected frequencies under Benford’s law using the code below.</p>
+<p>Benford’s law (Benford, 1938) is a principle that describes a pattern
+in many naturally-occurring numbers. According to Benford’s law, each
+possible leading digit <em>d</em> in a naturally occurring, or
+non-manipulated, set of numbers occurs with a probability p(d) = log10(1
++ 1/d). The distribution of leading digits in a data set of financial
+transaction values (e.g., the <code>sinoForest</code> data) can be
+extracted and tested against the expected frequencies under Benford’s
+law using the code below.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Frequentist hypothesis test</span></span>
 <span><span class="fu"><a href="../reference/distr.test.html">distr.test</a></span><span class="op">(</span><span class="va">sinoForest</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'first'</span>, reference <span class="op">=</span> <span class="st">'benford'</span><span class="op">)</span></span></code></pre></div>
@@ -127,16 +153,29 @@
 <div class="section level2">
 <h2 id="function-rv-test">Function: <code>rv.test()</code><a class="anchor" aria-label="anchor" href="#function-rv-test"></a>
 </h2>
-<p>The function <code><a href="../reference/rv.test.html">rv.test()</a></code> analyzes the frequency with which values get repeated within a set of numbers. Unlike Benford’s law, and its generalizations, this approach examines the entire number at once, not only the first or last digit. For the technical details of this procedure, see Simohnsohn (2019). The possible options for the <code>check</code> argument are taken over from <code><a href="../reference/extract_digits.html">extract_digits()</a></code>.</p>
+<p>The function <code><a href="../reference/rv.test.html">rv.test()</a></code> analyzes the frequency with which
+values get repeated within a set of numbers. Unlike Benford’s law, and
+its generalizations, this approach examines the entire number at once,
+not only the first or last digit. For the technical details of this
+procedure, see Simohnsohn (2019). The possible options for the
+<code>check</code> argument are taken over from
+<code><a href="../reference/extract_digits.html">extract_digits()</a></code>.</p>
 <p><em>Example:</em></p>
-<p>In this example we analyze a data set from a (retracted) paper that describes three experiments run in Chinese factories, where workers were nudged to use more hand-sanitizer. These data were shown to exhibited two classic markers of data tampering: impossibly similar means and the uneven distribution of last digits (Yu, Nelson, &amp; Simohnson, 2018). We can use the <code><a href="../reference/rv.test.html">rv.test()</a></code> function to test if these data also contain a greater amount of repeated values than expected if the data were not tampered with.</p>
+<p>In this example we analyze a data set from a (retracted) paper that
+describes three experiments run in Chinese factories, where workers were
+nudged to use more hand-sanitizer. These data were shown to exhibited
+two classic markers of data tampering: impossibly similar means and the
+uneven distribution of last digits (Yu, Nelson, &amp; Simohnson, 2018).
+We can use the <code><a href="../reference/rv.test.html">rv.test()</a></code> function to test if these data
+also contain a greater amount of repeated values than expected if the
+data were not tampered with.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/rv.test.html">rv.test</a></span><span class="op">(</span><span class="va">sanitizer</span><span class="op">$</span><span class="va">value</span>, check <span class="op">=</span> <span class="st">'lasttwo'</span>, B <span class="op">=</span> <span class="fl">2000</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
 <span><span class="co">##  Repeated values test</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## data:  sanitizer$value</span></span>
-<span><span class="co">## n = 1600, AF = 1.5225, p-value = 0.0015</span></span>
+<span><span class="co">## n = 1600, AF = 1.5225, p-value = 0.004</span></span>
 <span><span class="co">## alternative hypothesis: average frequency in data is greater than for random data.</span></span></code></pre>
 </div>
   </div>
